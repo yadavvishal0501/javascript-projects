@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>designing with bulma </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container columns ">
+        <div class="column is-1 "></div>
+        <div class="column is-4   ">
+            <table class="table ">
+                <thead>
+                    <th>Player 1</th>
+                    <th>Player 2</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span id="player1">0</span></td>
+                        <td><span id="player2">0</span></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>player-1 wins<span id="state1"> 0 </span>match</td>
+                        <td>player-2 wins<span id="state2"> 0 </span>match</td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+        <div class="column is-5">
+            <div class="  card">
+                <header class="card-header is-flex-direction-column">
+                    <figure class="image  ">
+                        <img src="steven-skerritt-vljZeX-WdQs-unsplash.jpg" alt="ping pong image">
+                    </figure>
+
+                    <p class="card-header-title">
+                        ping pong score keeper
+                    </p>
+
+                </header>
+                <div class="card-content">
+                    <h1 class="title is-1"><span id="p1display">0</span> TO <span id="p2display">0</span></h1>
+                    <p class="subtitle">use the button below to keep the score</p>
+                    <label for="ping" class="label is-large is-inline">Playing to</label>
+                    <div class="select is-rounded">
+                        <select id="ping">
+                            <!-- javascript works on value of input -->
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <footer class="card-footer">
+                    <button class="card-footer-item is-primary button" id="p1btn">+1 player one</button>
+                    <button class="card-footer-item is-info button" id="p2btn">+1 player two</button>
+                    <button class="card-footer-item is-danger button" id="reset">Reset</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="app2.js"></script>
+</body>
+
+</html>

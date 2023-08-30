@@ -1,0 +1,40 @@
+abstraction with example
+so in real world coffe machine is a good example. when we make a coffe we just provide it the coffe beans and water. the coffe machine according to what coffe we wand procees it and  make it . so we don't have to known how the coffe machine work bheind the sceen . we only need to know which input and buttons we should use on the machine.
+
+in oops we only need to know the use of method of the object
+ and do not need to know how it function and what proceess the method used.
+
+intro to object oriented-programming
+Entities are coded as objects, and each entity will group a given set of information (properties) and actions (methods) that can be performed by the entity.
+
+the entities which are coded as object the abstracction of entities , we are able to think about the program in a similar way as our world works. with different person perform certain action and interach with each other
+
+CLASSES :- classes solve the problem of giving seprate code for every character
+.classes set a blue print to create object with predefined properties and methods. or it act as a mold for object to be molded with specific design 
+
+ by creating a class like class of species having certain character specific to define to individual organism can have relate direictley to it
+the new is a instinated on or more time with the class to get concrete values.
+********************************************************************
+
+ THE FOUR PRINCIPLES OF OOPS
+1- Inheritance
+inheritance is the ability to make a class based on other classes with inheritance we can define a parent class with certain properties and methods and then child class which will inherit properties of parent class.
+on children class we can use extend key word to declare the parent class 
+and super() function to indicate the property is declared in the parent class.
+You can extend the inheritance chain as much as you want, setting parent, grandparent, great grandparent classes and so on.
+2-Enscapulation
+Encapsulation is another key concept in OOP, and it stands for an object's capacity to "decide" which information it exposes to "the outside" and which it doesn't. Encapsulation is implemented through public and private properties and methods.
+In JavaScript, all objects' properties and methods are public by default
+we an acces the private property but cannot log it and show it
+3.Abstraction
+as above dicussed about abstraction the same definition is there and it is closely related to enscapulation only expose properties and methods that you are going to use .if it is not needed, don't expose it
+
+4-Polymorphism
+🙃Polymorphism means "many forms" and is actually a simple concept. It's the ability of one method to return different values according to certain conditions.
+as in inheritance if the child class invoke same method as the parent class on calling the child class method will work . and it can be also based on the parameter passed.
+
+5- Object-composition 
+When we talked about inheritance we mentioned that child classes always inherit all parent methods and properties. Well, by using composition we can assign properties and methods to objects in a more flexible way than inheritance allows, so objects only get what they need and nothing else.
+in these we use a function and pass object as a parameter and add method to it. so which entities want these they should pass in it as a param.
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>score keeper</title>
+ <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+   
+    <div id="container">
+        <div class="card">
+            <img src="steven-skerritt-vljZeX-WdQs-unsplash.jpg " style="height: 175px; width: 490px;" alt="ping pong image">
+            <div class="style">
+            <p>ping pong sccore keeper</p>
+
+                <div class="value">
+                    <h1><span id="p1display">0</span> TO <span id="p2display">0</span></h1>
+                    <p>use the button below to keep score</p>
+                </div>
+                <div class="select">
+                    <label for="ping">Playing TO</label>
+                    <select name="ping" id="ping" >
+                        <!-- javascript works on value of input -->
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                       
+                    </select>
+                </div>
+                <div class="button-container">
+                    <button class="btn"  id="p1btn">+1 player one</button>
+                    <button class="btn" id="p2btn">+1 player two</button>
+                    <button class="btn" id="reset">Reset</button>
+                </div>
+            </div>
+      
+            <script src="app.js"></script>
+            
+</body>
+
+</html>
