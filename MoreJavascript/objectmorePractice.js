@@ -132,6 +132,27 @@ console.log(person1.name)
 console.log(person1.intro())
 
 
+/* object famous property methods to iterate over object */
 
+//for in loop and object.keys() 
+const CAR={
+    model :'lAMBO',
+    color:'bold black',
+    year:1990,
+
+};
+
+for (let i in CAR) {
+    //Object.hasOwn() use to exclude properties from prototype chain and include only own properties
+    if (Object.hasOwn(CAR, i)) {
+        console.log(i);
+    }
+}
+
+
+// another method is  Object.keys(obj) which make an array of keys in the object after that we can use any array method to iterate over it. 
+Object.keys(CAR).forEach((i) => {
+    console.log(i);
+})
 
 
