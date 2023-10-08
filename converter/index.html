@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>converter</title>
+</head>
+
+<body>
+    <div class="form">
+        <form id="form">
+            <div class="select">
+                <div class="label"> <label for="unit">Select</label></div>
+                <select name="units" id="unit">
+                    <option value="temperature">Temperature</option>
+                    <option value="otherunit">Other units</option>
+                </select>
+            </div>
+            <div class="input">
+                <div class="label"> <label for="input">enter value</label></div>
+                <input id="input" type="number">
+            </div>
+            <div class="converter">
+                <div class="from">
+                    <div class="label">
+                        <label for="from">From</label>
+                    </div>
+                    <select name="from" id="from">
+                        <option value="celcius">Celcius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                    </select>
+                </div>
+                <div class="to">
+                    <div class="label">
+                        <label for="to">To</label>
+                    </div>
+                    <select name="to" id="to">
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="celcius">Celcius</option>
+                    </select>
+                </div>
+            </div>
+            <div class="submit"><button>Convert</button></div>
+             </form>
+             <div class="output">
+                <input id="fromThis" type="number" value="">
+                <label class="ft" for="fromThis">input</label>
+                =
+                <input id="toThis" type="number">
+                <label class="tt" for="toThis">output</label>
+
+            </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
