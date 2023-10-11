@@ -12,10 +12,9 @@
         <form id="form">
             <div class="select">
                 <div class="label"> <label for="unit">Select</label></div>
-                <select  name="units" id="unit"
-                    onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
+                <select name="units" id="unit" onchange="window.location= this.options[this.selectedIndex].value" ;>
+                    <option value="lenght.html">Length</option>
                     <option value="index.html">Temperature</option>
-                    <option value="length.html">Length</option>
                 </select>
             </div>
             <div class="input">
@@ -28,8 +27,13 @@
                         <label for="from">From</label>
                     </div>
                     <select name="from" id="from">
-                        <option value="celcius">Celcius</option>
-                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="kilometer">Kilometer</option>
+                        <option value="meter">Meter</option>
+                        <option value="cent">Centimeter</option>
+                        <option value="milli">Millimeter</option>
+                        <option value="yard">Yard</option>
+                        <option value="foot">Foot</option>
+                        <option value="mile">Miles</option>
                     </select>
                 </div>
                 <div class="to">
@@ -37,10 +41,16 @@
                         <label for="to">To</label>
                     </div>
                     <select name="to" id="to">
-                        <option value="celcius">Celcius</option>
+                        <option value="kilometer">Kilometer</option>
+                        <option  selected
+                         value="meter">Meter</option>
                         <option 
-                        selected
-                        value="fahrenheit">Fahrenheit</option>
+                        
+                        value="cent">Centimeter</option>
+                        <option value="milli">Millimeter</option>
+                        <option value="yard">Yard</option>
+                        <option value="foot">Foot</option>
+                        <option value="mile">Miles</option>
                     </select>
                 </div>
             </div>
@@ -50,7 +60,7 @@
             <input id="fromThis" type="number" value="">
             <label class="ft" for="fromThis">input</label>
             =
-            <input id="toThis" type="number">
+            <input id="toThis" type="text">
             <label class="tt" for="toThis">output</label>
 
         </div>
