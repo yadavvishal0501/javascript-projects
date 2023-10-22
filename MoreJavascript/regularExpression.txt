@@ -1,0 +1,244 @@
+Reqular expression
+.regular expressions in javascript are a sequence of characters that form a search pattern. you can use them to search, edit or manipualte text.
+
+Here is a basic example of a regular expression in javascript :
+const regex = /abc/
+ this regular expressions matches for string "abc".
+
+You can use regular expression to do things like:
+. Search for a string in a text document .
+. Replace a string from another string.
+. Extract parts of a string.
+.Validate a string against a pattern.
+
+#How to create a regular Expression
+In javscript ,you can create a regular expression in either two ways.
+1- method is using a regular expression literal . this consist of pattern enclosed in forward slashes./../
+const regExpLiteral = /pattern/;
+ex- const regexp = /abc/; //output /abc/
+
+2- method using the RegExp constructor function. 
+new RegExp(pattern[,flags])
+ex- const Reg  = new RegExp("abc");
+//output /abc/;
+pattern should be enclosed in quotes, and the flag is optional.
+
+#so when do we use each of the pattern?
+=>.you can use regex literal when you known the regular expression pattern at the time of writing the code.
+.on the other hand use the RegExp constructor if the regex pattern is to be created dynamically.Also, the regex constructor  lets you write a pattern using a template literal, but this is not possible with the regex literal syntax.
+
+#What are Regular Expression flags?
+=>Flags or modifers are characters that enable advanced search features including  case-insestivity and global searching.you can use them individually or collectively.some commonly used are :
+1- g is used for global search which means the search will not return after the first match.
+2- i is used for case-insensitive search meaning that a match can occur regardless of casing.
+3- m is used for multiline search.
+4- u id used for unicode search.
+
+ex:- 
+const regExpStr = 'Hello ,hello Hello world!'
+const regExpLiteral = /Hello/gi;
+
+console.log(regExpStr.match(regExpLiteral))
+// return Array[Hello,hello,Hello];
+
+note- if flag the pattern with i only Hello will returned
+
+const regExpStr = 'oHell ,ohell oHell world!'
+const regExpLiteral = /Hello/gi;
+
+console.log(regExpStr.match(regExpLiteral))
+// return null;
+
+so why its return null because we are using simple pattern /Hello/ this will match the exact same sequence /H/followed by e/followed by l/followed by l/followed by l/follwed by o so it will match this fixed 
+sequence.
+
+#How to use a regex constructor:
+const regExpStr = 'Hello ,hello oHello world!'
+//syntax new RegExp(pattern [,flag]);
+const regExpconstructor= new RegExp('Hello','gi')//raise the flag g
+
+console.log(regExpStr.match(regExpconstructor))
+//return Array[Hello,hello,Hello];
+
+#for this example
+onst pattern = prompt('Enter a pattern');
+// Suppose the user enters 'xyz'
+
+const regExpConst = new RegExp(`${pattern}`, 'gi');
+// const regExpConst = /`${pattern}`/gi;
+
+const str = 'xyz XYZ';
+
+console.log(str.match(regExpConst))
+//[xyz XYZ]
+this pattern matches only with constructor function not with regEx literal.
+#How to use Regular expression special characters.
+=>A special character in a regular expression is a character with a reserved meaning .using special you can do more than just finding a direct match.
+
+for ex- if you want to match a character in a string that may not appear once or multiples times,you can do this 
+with a special characters. these characters fit into different sub-groups that perform similar function.
+
+#Anchors and boundaries:
+Anchors are metacharacters that match the start and end of the a line of a text they are examining. You use them to assert where boundary should be.
+ The two characters used are ^ and $.
+
+- ^ matches the start of a line and 
+try
+const regex = /^Ward/g;
+const string = 'Ward alway Ward backward to Ward ward';
+console.log(string.match(regex));// return ['Ward']
+(^) only checks the first word of the string and matches 
+if it is there then it returns true or test or false for test 
+($) only checks the last word as a boundary of the string and return true for test or false.
+
+// Syntax 1: /\b.../ where .... represents a word.
+
+// Search for a word that begins with the pattern ward
+const regexPattern1 = /\bward/gi;
+
+const text1 = 'backward Wardrobe Ward';
+
+console.log(text1.match(regexPattern1)); // Output: ['Ward', 'Ward']
+
+// Syntax 2: /...\b/
+
+// Search for a word that ends with the pattern ward
+const regexPattern2 = /ward\b/gi;
+
+const text2 = 'backward Wardrobe Ward';
+
+console.log(text2.match(regexPattern2)); // Output: ['ward', 'Ward']
+
+// Syntax 3: /\b....\b/
+
+// Search for a stand-alone word that begins and end with the pattern ward
+const regexPattern3 = /\bward\b/gi;
+
+const text3 = 'backward Wardrobe Ward';
+
+console.log(text3.match(regexPattern3)); // Output: ['Ward']
+
+\B is completely opposite to \b in defenitons and working/
+
+#
+Shortcodes for Other Metacharacters:
+\d – matches any decimal digit and is shorthand for [0-9]. ex-
+const regex = /\d/gi;
+const string = 'backward 90 and front20';
+console.log(string.match(regex));
+output : [ '9', '0', '2', '0' ]
+
+\w – matches any alphanumeric character which could be a letter, a digit, or an underscore. \w is shorthand for [A-Za-z0-9_].
+const regex = /\w/gi;
+const string = 'backward 90 and front20';
+console.log(string.match(regex));
+node /tmp/pKBUvdkF0s.js
+[
+  'b', 'a', 'c', 'k', 'w',
+  'a', 'r', 'd', '9', '0',
+  'a', 'n', 'd', 'f', 'r',
+  'o', 'n', 't', '2', '0'
+]
+
+\s – matches any white space character.
+const regex = /\s/gi;
+const string = 'backward 90 and front20';
+console.log(string.match(regex));
+[ ' ', ' ', ' ' ]
+
+\D – matches any non-digit and is the same as [^0-9.]
+const regex = /\D/gi;
+const string = 'backward 90 and front20';
+console.log(string.match(regex));
+output:[
+  'b', 'a', 'c', 'k', 'w',
+  'a', 'r', 'd', ' ', ' ',
+  'a', 'n', 'd', ' ', 'f',
+  'r', 'o', 'n', 't'
+]
+and these is complete opposite above characters:
+
+\W – matches any non-word (that is non-alphanumeric) character and is shorthand for  [^A-Za-z0-9_].
+
+\S – matches a non-white space character.
+. – matches any character.
+
+What is a Character Class?
+A character class is used to match any one of several characters in a particular position. To denote a character class, you use square brackets [] and then list the characters you want to match inside the brackets.
+const regexPattern = /ambi[ea]nce/gi;
+
+console.log(('ambiance ambience').match(regexPattern))
+//output :['ambiance', 'ambience']
+
+What is a Negated Character Class?
+opposite of Character class denoted by [^...];
+const regexPattern = /[^bc]at/gi;
+
+console.log(('bat cat mat').match(regexPattern))
+output :['mat'];
+# What is aleration
+like or operator || only use one pipe Character ang make the match for test only for matches
+ex:-const regexPattern = /(b|m)at/gi;
+
+console.log(('bat i cat mat').match(regexPattern))
+output :[ 'bat', 'mat' ];
+# quantifiers and greediness
+now quantifers means how many times a character class,or group should appear in target test for match.
+const regexPattern = /hel+oo/gi;
+he(l+o)o //just focus on this is the main thing means as your pattern this character should appear for left side means l should appear one time and followed by o should appear one time.
+console.log(('heeeloo').match(regexPattern))
+
+but in greediness it is little bit different the l can be appeares or not appeared but o should be appeared at least for at number times shown in the pattern.
+
+(?) impiles "optional" when you append a character, it means the character may or may not be appeared.
+const regexPattern = /colou?r/;
+
+console.log(regexPattern.test('color'));  // Output: true
+
+console.log(regexPattern.test('colour')); // Output: true
+
+// The ? after the character u makes u optional
+{N}, when appended to a character or character class, specifies how many of the character we want. For example /\d{3}/ means match three consecutive digits.
+{N,M} is called the interval quantifier and is used to specify a range for the minimum and maximum possible match. For example /\d{3, 6}/ means match a minimum of 3 and a maximum of 6 consecutive digits.
+{N, } denotes an open-ended range. For example /\d{3, }/ means match any 3 or more consecutive digits.
+
+#To make greediness in array non greedy use
+To remove this default state and make them non-greedy, you append a ? to the operator like this +?, *?, {N}?, {N,M}?.....and so on.
+
+What are Grouping and Backreferencing?
+We previously looked at how we can limit the scope of alternation using the parentheses.
+
+What if you want to use a quantifier like + or * on more than one character at a time – say a character class or group? You can group them together as a whole using the parentheses before appending the quantifier,
+
+ex - 
+const regExp = /abc+(xyz+)+/i;
+
+console.log(regExp.test('abcxyzzzzXYZ')); // Output: true
+
+ You use \1, \2, or \3, to refer to the first, second, or third parentheses. To number the parentheses, you start counting the open parentheses from the left.
+const regexPattern = /abc(bar)\1/gi;
+
+console.log(('abcbarbar').match(regexPattern))
+output:[ 'abcbarbar' ];
+
+The Escape Rule(\)
+A metacharacter has to be escaped with a backslash if you want it to appear as a literal in your regular expression. By escaping a metacharacter in regex, the metacharacter loses its special meaning.
+/^[(\w\d\W)+]+@[\w+]+\.[\w+]+$/i; for url->
+/ represents the start of the regular expression pattern.
+^ checks for the start of a line with the characters in the character class.
+[(\w\d\W)+ ]+ matches any word, digit and non-word character in the character class at least once. Notice how the parentheses were used to group the characters before adding the quantifier. This is same as this [\w+\d+\W+]+ .
+@ matches the literal @ in the email format.
+[\w+]+ matches any word character in this character class at least once.
+\. escapes the dot so it appears as a literal character.
+[\w+]+$ matches any word character in this class. Also this character class is anchored at the end of the line.
+/ - ends the pattern
+/^[https?]+:\/\/((w{3}\.)?[\w+]+)\.[\w+]+$/i;-->
+/...../ represents the start and end of the regex pattern
+^ asserts for the start of the line
+[https?]+ matches the characters listed at least once, however ? makes 's'  optional.
+: matches a literal semi-colon.
+\/\/ escapes the two forward slashes.
+(w{3}\.) matches the character w 3 times and the dot that follows immediately. However, this group is optional.
+[\w+]+ matches character in this class at least once.
+\. escapes the dot
+[\w+]+$ matches any word character in this class. Also this character class is anchored at the end of the line.
