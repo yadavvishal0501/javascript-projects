@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<%- include('partials/nav') %>
+    <section>
+        <h1 class="text-center">All tweets</h1>
+        <% for(let c of comment){ %>
+         
+              <ul><li><%= c.tweet %></li>-<b><%= c.username %></b><a href="comments/<%= c.id %>">details</a></ul>
+            
+           
+        
+       <% } %>
+
+    </section>
+ <a href="/comments/new">Make comment</a>
+
+<%- include('partials/footer') %>

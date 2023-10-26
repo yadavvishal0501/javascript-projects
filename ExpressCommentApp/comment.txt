@@ -1,0 +1,13 @@
+Name   --     Path   --  verb  --          purpose
+1.index<-- >/comments<-->Get<-->Displayallcomments
+2.New<-->/comments/new<-->Get<->Form to create new comment.
+
+3.Create<-->/comments<-->Post<-->creates new comment on server.
+
+4.show<-->/comments/:id<-->Get<-->Details for one specific comment
+
+5.Edit<->/comment/:id/edit<-->Get<-->form to edit specific comment;
+
+6.Update<->/comments/:id<-->Patch<-->updates specific comment on server
+
+7.Destroy><->/comments/:id<->Delete<->deletes specific item on server.

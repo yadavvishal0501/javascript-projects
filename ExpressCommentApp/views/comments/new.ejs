@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<%- include('partials/nav') %>
+    <form action="/comments" method="post">
+        <section>
+            <h2>username</h2>
+            <input type="text" name="username">
+        </section>
+        <section>
+            <h2>tweet</h2>
+            <textarea name="tweet" id="" cols="30" rows="5"></textarea>
+        </section>
+        <button>submit </button>
+    </form>
+    <a href="/comments">go back</a>
+    <%- include('partials/footer') %>
