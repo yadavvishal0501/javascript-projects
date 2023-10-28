@@ -1,8 +1,13 @@
-if(true){
-    var name = 'vishal'//var is scoped globally; const and let are blocked scoped
+// var is only function-scoped not blocked scoped where as const and let are function-scoped and blocked-scoped;
+
+
+
+if (true) {
+    
+    var Name = 'vishal'//as it is not blocled scoped
     
 }
-console.log(name);// 'vishal'
+console.log(Name);// 'vishal'
 
 function foo(lastName){
     var second = lastName;
@@ -16,7 +21,7 @@ console.log(foo('yadav'))//'yadav'
 
    
 function Say(name){
-    var data ;
+    var data ;//declaring
     if(true){
        data = name;//let will be give same output value.
     }
@@ -28,9 +33,10 @@ function Say2(name){
     if(true){
     let  data = name;//let will be give same value.
     }
-        return data;//for let and const not defined sa because of function scoped.
+        return data;//for let and const return undefined as because of blocked scoped.
 }
-console.log(Say2('vishal'))//for var only 'vishal';
+console.log(Say2('vishal'))// undefined;
+//but by declaring data with var the function will return 'vishal'
 
 function Say3(name){
     
@@ -43,6 +49,14 @@ Say3('vishal')// not defined
 
 // note one thing if the variable we are declaring for example let used  if for loop (let i=0;) so we want to use i=0 only for that loop case only not any outside function or variable declaration the drawback of using var is that var is not blocked scope and the value of i will be declared outside for loop.
 
+// test this in interpreter for better undertanding 
+var A = 12
+var A = 23
+console.log(A)// ouptut is 23;
+// but for let 
+let B = 19;
+// let B = 23;
+console.log(B)//let cannot be redeclared output indentifer B is already been declared.
 
 
 
