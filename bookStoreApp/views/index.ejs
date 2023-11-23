@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all books</title>
+</head>
+<body>
+    <h1>book list</h1>
+    <ul><% for(list of book){ %>
+        <li><%= list.name %> <a href="/products/<%= list._id %>">Details</a></li>
+     
+    <% } %></ul>
+   <a href="/products/new">Add-Book</a>
+   <% if(category!=='All'){ %>
+         <a href="/products">All Products</a>
+   <% } %>
+
+   <p><i>The new feature will be Added is add to cart and onsale</i></p>
+</body>
+</html>
